@@ -1,0 +1,64 @@
+<!-- Main content -->
+<div class="login-container">
+    <!-- Simple login form -->
+    <div class="panel login-form">
+        <div class="login-box">
+            <div class="box-left">
+                <div class="ial-logo">
+                    <img src="./assets/images/logo.png">
+                </div>
+            </div>
+            <div class="box-right">
+                <div class="panel-body">
+                    <h1>SIGN IN</h1>
+                    <app-list-errors [errors]="errors"></app-list-errors>
+                    <form [formGroup]="authForm" (ngSubmit)="submitForm()">
+                        <fieldset [disabled]="isSubmitting">
+                            <!-- <div class="form-group">
+                            <select class="form-control" id="portal-type">
+                                <option disabled="" selected="" hidden="">User Type</option>
+                                <option value="super-admin">Super Admin</option>
+                                <option value="broker-admin">Broker Admin</option>
+                                <option value="underwriter">Underwriter</option>
+                            </select>
+                        </div> -->
+                            <div class="form-group has-feedback has-feedback-left">
+                                <input type="text" class="form-control" placeholder="User ID / Email Address"
+                                    formControlName="userName">
+                                <div class="form-control-feedback">
+                                    <i class="icon-user text-muted"></i>
+                                </div>
+                            </div>
+                            <div class="form-group has-feedback has-feedback-left mb-8">
+                                <input type="password" class="form-control" placeholder="Password"
+                                    formControlName="password">
+                                <div class="form-control-feedback">
+                                    <i class="icon-lock2 text-muted"></i>
+                                </div>
+                            </div>
+                            <div class="form-group mb-4 text-right">
+                                <!-- <a href="super-admin-index.html" class="btn btn-primary super-admin-login-btn btn-block"> <i class="icon-lock2 font-small-3 mr-1"></i> Login </a>
+                            <a href="index.html" class="btn btn-primary broker-admin-login-btn btn-block"> <i class="icon-lock2 font-small-3 mr-1"></i> Login </a>
+                            <a href="underwriter-index.html" class="btn btn-primary underwriter-login-btn btn-block"> <i class="icon-lock2 font-small-3 mr-1"></i> Login </a> -->
+                                <!-- <a href="/portal" class="btn btn-primary no-portal-btn btn-block"> <i
+                                    class="icon-lock2 font-small-3 mr-1"></i> Login </a> -->
+                                <button class="btn btn-primary no-portal-btn btn-block" type="submit"
+                                    [disabled]="!authForm.valid">
+                                    <i class="icon-lock2 font-small-3 mr-1"></i> Login
+                                </button>
+                                <!-- <a href="/" class="btn btn-grey-outline btn-block">
+                                <i class="icon-pencil7 mr-half font-medium-2"></i> Sign Up</a> -->
+
+                            </div>
+                            <div class="text-right">
+                                <a class="">Forgot password?</a>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /simple login form -->
+</div>
+<!-- /main content -->

@@ -1,0 +1,9 @@
+{
+    "env": {
+        "name": "dev"
+    },
+    "appSettings": {
+        "idleTimeInSec": "700",
+        "timeoutInSec": "20"
+    }
+}

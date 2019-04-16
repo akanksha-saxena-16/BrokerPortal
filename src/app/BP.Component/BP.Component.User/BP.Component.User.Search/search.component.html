@@ -1,0 +1,89 @@
+<div class="panel panel-body no-header">
+    <form class="form form-horizontal">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-6">
+                <div class="form-group clearfix">
+                    <label class="col-sm-4 col-lg-4 label-control">Search</label>
+                    <div class="col-sm-8 col-lg-8">
+                        <div class="form-group has-feedback has-feedback-left field-md">
+                            <input type="text" class="form-control ui-autocomplete-input" placeholder="">
+                            <div class="form-control-feedback">
+                                <i class="icon-search4 text-blue"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="table-responsive">
+    <table class="table table-striped search-user-table">
+        <thead>
+            <tr>
+                <th>Broker Name</th>
+                <th>Date Of Birth</th>
+                <th>City</th>
+                <th>UAG</th>
+                <th>Broker Code</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>David Houghton</td>
+                <td>13/08/1989</td>
+                <td>Chicago</td>
+                <td></td>
+                <td>B00001</td>
+                <td><span class="label status-label bg-info">Active</span></td>
+                <td>
+                    <ul class="icons-list">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                <i class="icon-menu4"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-right">
+                                <li><a href="#" data-toggle="modal" data-target="#activate-broker"><i
+                                            class="icon-user-check pull-right"></i> Activate</a></li>
+                                <li><a href="#" data-toggle="modal" data-target="#activate-broker"><i
+                                            class="icon-user-cancel pull-right"></i> Deactivate</a></li>
+                                <li><a><i class="icon-users2 pull-right"></i> Broker Details</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div id="activate-broker" class="modal fade moda-sm">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="alert-warning-center text-center">
+                    <a href="#" class="icon"><i class="icon-info3"></i></a>
+                    <p class="text-semibold mb-4 font-medium-3">Activate/Deactivate this broker?</p>
+                    <a href="add-new-user.html" class="btn btn-grey-outline" data-dismiss="modal">No</a>
+                    <a class="btn btn-primary" data-dismiss="modal" data-toggle="modal"
+                        data-target="#broker-activated-success">Yes</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="broker-activated-success" class="modal fade moda-sm">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="alert-success-center text-center">
+                    <a href="#" class="icon"><i class="icon-checkmark3"></i></a>
+                    <p class="text-semibold mb-4 font-large-2">Broker successfully activated/deactivated.
+                    </p>
+                    <a href="sa-user-mgmt.html" class="btn btn-success btn-shadow-1" data-dismiss="modal">OK</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

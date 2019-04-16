@@ -1,0 +1,228 @@
+<div class="panel panel-body no-header">
+    <form class="form form-horizontal" [formGroup]="userCreateForm" (ngSubmit)="submitForm()" autocomplete="off"
+        novalidate>
+        <fieldset [disabled]="isSubmitting">
+            <div class="form-body">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-6">
+                        <div class="form-group clearfix">
+                            <label class="col-sm-4 col-lg-4 label-control">Role Name</label>
+                            <div class="col-sm-8 col-lg-8">
+                                <div class="position-relative field-md">
+                                    <select class="form-control field-md" formControlName="RoleID"
+                                        [ngClass]="{'has-error' : formSubmitted && formErrors.RoleID}">
+                                        <option value="">Select</option>
+                                        <option *ngFor="let role of roles" [value]="role.Id">{{role.Role}}</option>
+                                    </select>
+                                </div>
+                                <span class="has-error-text"
+                                    *ngIf="formSubmitted && formErrors.Role">{{formErrors.Role}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-6">
+                        <div class="form-group clearfix">
+                            <label class="col-sm-4 col-lg-4 label-control">First Name</label>
+                            <div class="col-sm-8 col-lg-8">
+                                <div class="position-relative field-md">
+                                    <input type="text" class="form-control field-md" formControlName="FirstName"
+                                        [ngClass]="{'has-error' : formSubmitted && formErrors.FirstName}">
+                                </div>
+                                <span class="has-error-text"
+                                    *ngIf="formSubmitted && formErrors.FirstName">{{formErrors.FirstName}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-6">
+                        <div class="form-group clearfix">
+                            <label class="col-sm-4 col-lg-4 label-control">Last Name</label>
+                            <div class="col-sm-8 col-lg-8">
+                                <div class="position-relative field-md">
+                                    <input type="text" class="form-control field-md" formControlName="LastName"
+                                        [ngClass]="{'has-error': formSubmitted && formErrors.LastName}">
+                                </div>
+                                <span class="has-error-text"
+                                    *ngIf="formSubmitted && formErrors.LastName">{{formErrors.LastName}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-6">
+                        <div class="form-group clearfix">
+                            <label class="col-sm-4 col-lg-4 label-control">Email</label>
+                            <div class="col-sm-8 col-lg-8">
+                                <div class="position-relative field-md">
+                                    <input type="text" class="form-control field-md" formControlName="Email"
+                                        [ngClass]="{'has-error': formSubmitted && formErrors.Email}">
+                                </div>
+                                <span class="has-error-text"
+                                    *ngIf="formSubmitted && formErrors.Email">{{formErrors.Email}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-6">
+                        <div class="form-group clearfix">
+                            <label class="col-sm-4 col-lg-4 label-control">Phone No</label>
+                            <div class="col-sm-8 col-lg-8">
+                                <div class="position-relative field-md">
+                                    <input type="text" class="form-control field-md" formControlName="PhoneNo"
+                                        [ngClass]="{'has-error': formSubmitted && formErrors.PhoneNo}">
+                                </div>
+                                <span class="has-error-text"
+                                    *ngIf="formSubmitted && formErrors.PhoneNo">{{formErrors.PhoneNo}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-6">
+                        <div class="form-group clearfix">
+                            <label class="col-sm-4 col-lg-4 label-control">Address Line 1</label>
+                            <div class="col-sm-8 col-lg-8">
+                                <div class="position-relative field-md">
+                                    <input type="text" class="form-control field-md" formControlName="AddressLine1"
+                                        [ngClass]="{'has-error': formSubmitted && formErrors.AddressLine1}">
+                                </div>
+                                <span class="has-error-text"
+                                    *ngIf="formSubmitted && formErrors.AddressLine1">{{formErrors.AddressLine1}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-6">
+                        <div class="form-group clearfix">
+                            <label class="col-sm-4 col-lg-4 label-control">Address Line 2</label>
+                            <div class="col-sm-8 col-lg-8">
+                                <div class="position-relative field-md">
+                                    <input type="text" class="form-control field-md" formControlName="AddressLine2"
+                                        [ngClass]="{'has-error': formSubmitted && formErrors.AddressLine2}">
+                                </div>
+                                <span class="has-error-text"
+                                    *ngIf="formSubmitted && formErrors.AddressLine2">{{formErrors.AddressLine2}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-6">
+                        <div class="form-group clearfix">
+                            <label class="col-sm-4 col-lg-4 label-control">Postcode</label>
+                            <div class="col-sm-8 col-lg-8">
+                                <div class="position-relative field-md">
+                                    <div class="position-relative field-md">
+                                        <input type="text" class="form-control field-md" formControlName="Postcode"
+                                            [ngClass]="{'has-error': formSubmitted && formErrors.Postcode}">
+                                    </div>
+                                    <span class="has-error-text"
+                                        *ngIf="formSubmitted && formErrors.Postcode">{{formErrors.Postcode}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-6">
+                        <div class="form-group clearfix">
+                            <label class="col-sm-4 col-lg-4 label-control">Suburb</label>
+                            <div class="col-sm-8 col-lg-8">
+                                <div class="position-relative field-md">
+                                    <input type="text" class="form-control field-md" formControlName="Suburb"
+                                        [ngClass]="{'has-error': formSubmitted && formErrors.Suburb}">
+                                </div>
+                                <span class="has-error-text"
+                                    *ngIf="formSubmitted && formErrors.Suburb">{{formErrors.Suburb}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-6">
+                        <div class="form-group clearfix">
+                            <label class="col-sm-4 col-lg-4 label-control">State</label>
+                            <div class="col-sm-8 col-lg-8">
+                                <div class="position-relative field-md">
+                                    <input type="text" class="form-control field-md" formControlName="State"
+                                        [ngClass]="{'has-error': formSubmitted && formErrors.State}">
+                                </div>
+                                <span class="has-error-text"
+                                    *ngIf="formSubmitted && formErrors.State">{{formErrors.State}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-6">
+                        <div class="form-group clearfix">
+                            <label class="col-sm-4 col-lg-4 label-control">City</label>
+                            <div class="col-sm-8 col-lg-8">
+                                <div class="position-relative field-md">
+                                    <input type="text" class="form-control field-md" formControlName="City"
+                                        [ngClass]="{'has-error': formSubmitted && formErrors.City}">
+                                </div>
+                                <span class="has-error-text"
+                                    *ngIf="formSubmitted && formErrors.City">{{formErrors.City}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-6">
+                        <div class="form-group clearfix">
+                            <label class="col-sm-4 col-lg-4 label-control">Password</label>
+                            <div class="col-sm-8 col-lg-8">
+                                <div class="position-relative field-md">
+                                    <input type="password" class="form-control field-md" formControlName="Password"
+                                        [ngClass]="{'has-error': formSubmitted && formErrors.Password}">
+                                </div>
+                                <span class="has-error-text"
+                                    *ngIf="formSubmitted && formErrors.Password">{{formErrors.Password}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-6">
+                        <div class="form-group clearfix">
+                            <label class="col-sm-4 col-lg-4 label-control">Confirm Password</label>
+                            <div class="col-sm-8 col-lg-8">
+                                <div class="position-relative field-md">
+                                    <input type="password" class="form-control field-md"
+                                        formControlName="ConfirmPassword"
+                                        [ngClass]="{'has-error': formSubmitted && formErrors.ConfirmPassword}">
+                                </div>
+                                <span class="has-error-text"
+                                    *ngIf="formSubmitted && formErrors.ConfirmPassword">{{formErrors.ConfirmPassword}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="row" [hidden]="true">
+                    <div class="col-sm-12 col-md-12 col-lg-6">
+                        <div class="form-group clearfix">
+                            <label class="col-sm-4 col-lg-4 label-control">Broker Code</label>
+                            <div class="col-sm-8 col-lg-8">
+                                <input type="text" class="form-control field-md" formControlName="BrokerCode" [tooltip]="formErrors.BrokerCode">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-6">
+                        <div class="form-group clearfix">
+                            <label class="col-sm-4 col-lg-4 label-control">Broker UAG</label>
+                            <div class="col-sm-8 col-lg-8">
+                                <input type="text" class="form-control field-md" formControlName="BrokerUAG" [tooltip]="formErrors.BrokerUAG">
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+            <div class="form-group text-right">
+                <!-- <a href="#" class="btn btn-grey-outline"> <i class="icon-reset font-medium-3 mr-1"></i> Reset </a> -->
+                <!-- <a href="#" class="btn btn-primary search-table" data-toggle="modal" data-target="#add-broker">
+                <i class="icon-plus3 mr-half font-medium-1"></i> Add Broker</a> -->
+                <button class="btn btn-grey-outline" type="submit" (click)="resetForm()">
+                    <i class="icon-reset font-medium-3 mr-1"></i> Reset
+                </button>
+                <button class="btn btn-primary search-table" type="submit">
+                    <i class="icon-plus3 mr-half font-medium-1"></i> Add User
+                </button>
+            </div>
+        </fieldset>
+    </form>
+</div>
+<app-confirmation></app-confirmation>

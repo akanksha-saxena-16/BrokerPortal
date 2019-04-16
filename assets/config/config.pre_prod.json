@@ -1,0 +1,9 @@
+{
+    "env": {
+        "name": "pre_prod"
+    },
+    "appSettings": {
+        "idleTimeInSec": "700",
+        "timeoutInSec": "20"
+    }
+}

@@ -1,0 +1,20 @@
+<div bsModal #lgConfirmationModal="bs-modal" [config]="{ ignoreBackdropClick:true,keyboard:false }"
+    class="modal fade moda-sm" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="alert-warning-center text-center">
+                    <a href="#" class="icon"><i class="icon-info3"></i></a>
+                    <p class="text-semibold mb-4 font-medium-3">{{message}}</p>
+                    <button type="button" (click)="okAction()" class="btn btn-grey-outline">Yes
+                    </button>
+                    <button type="button" (click)="HideModal()" class="btn btn-primary">No
+                    </button>
+                    <!-- <a href="add-new-user.html" class="btn btn-grey-outline" data-dismiss="modal">No</a>
+                    <a class="btn btn-primary" data-dismiss="modal" data-toggle="modal"
+                        data-target="#add-broker-success">Yes</a> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

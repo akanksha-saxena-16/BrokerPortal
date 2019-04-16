@@ -1,0 +1,31 @@
+<h2 class="page-title">Add User<span class="line"></span></h2>
+<div class="tabbable">
+    <ul class="nav nav-tabs nav-tabs-bottom mb-4">
+        <li><a href="#bottom-justified-tab1" data-toggle="tab" class="legitRipple active" aria-expanded="true">Add
+                Broker</a></li>
+        <li class=""><a href="#bottom-justified-tab2" data-toggle="tab" class="legitRipple" aria-expanded="false">Broker
+                Listing</a></li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane active" id="bottom-justified-tab1">
+            <app-user-create></app-user-create>
+        </div>
+        
+        <div id="add-broker-success" class="modal fade moda-sm">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="alert-success-center text-center">
+                            <a href="#" class="icon"><i class="icon-checkmark3"></i></a>
+                            <p class="text-semibold mb-4 font-large-2">Broker successfully added.</p>
+                            <a href="sa-user-mgmt.html" class="btn btn-success btn-shadow-1" data-dismiss="modal">OK</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="bottom-justified-tab2">
+            <app-user-search></app-user-search>
+        </div>
+    </div>
+</div>
